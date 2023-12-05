@@ -1,0 +1,13 @@
+{
+    "manifest_version": 3,
+    "name": "WorldAlchmey",
+    "version": "1.2.5",
+    "description": "Extension for English Dictionary",
+    "action": {
+      "default_title": "WorldAlchmey Extension SvelteKit",
+      "default_popup": "index.html"
+    },
+    "permissions": [
+      "storage"
+    ]
+  }
