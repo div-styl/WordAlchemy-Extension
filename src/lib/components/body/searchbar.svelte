@@ -1,11 +1,11 @@
 <script>
 	// import SearchIcon from '$lib/assets/Vector.svg';
-	//import { goto } from '$app/navigation';
+	import { goto } from '$app/navigation';
 	export let word = '';
 
 	export const search = () => {
 		console.log('Word you are Looking for:', word);
-		// goto(`/Definition/${word}`);
+		goto(`/define/${word}`);
 	};
 </script>
 
