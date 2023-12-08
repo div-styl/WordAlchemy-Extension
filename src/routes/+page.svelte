@@ -32,7 +32,8 @@
 </svelte:head>
 
 <section>
-	<div bind:this={lottieElement} class="h-[100px]" />
+	<div bind:this={lottieElement} class="h-[100px]"/>
+	<h1 class="text-3xl font-Dhurjati text-center ">Wordalchemy</h1>
 	<Searchbar />
 </section>
 
