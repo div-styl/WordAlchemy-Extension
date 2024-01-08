@@ -1,7 +1,29 @@
 <script>
-	/** @type {import('./$types').PageData} */
-	let pagetitle = `WordAlchemy | Definition of `;
-    let description = 'Word definition for English words';
+	import { Meaning } from '$lib';
+
+	export let data;
+	$: phonetic = data?.phonetics;
+	$: wordefine = data?.word;
+	$: audioSource = data?.phonetics.audio;
+
+	const playaudio = () => {
+		if (audioSource) {
+			const audio = new Audio(audioSource);
+			audio.play();
+		} else {
+			alert('No audio available for this word');
+		}
+	};
+
+	let wordsearch = '';
+	let pagetitle = '';
+	let description = '';
+
+	$: {
+		wordsearch = wordefine;
+		pagetitle = `WordAlchemy | Definition of ${wordsearch}`;
+		description = `Definition page of ${wordsearch}`;
+	}
 </script>
 
 <svelte:head>
@@ -9,5 +31,4 @@
 	<meta name="description" content={description} />
 </svelte:head>
 
-
-<h1 class="text-3xl font-Dhurjati text-center"> Hello you trying to define something</h1>
+<Meaning {wordsearch} {phonetic} {audioSource} on:playaudio={playaudio} {data} />
